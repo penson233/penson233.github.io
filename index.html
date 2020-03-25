@@ -301,8 +301,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><hr>
-<blockquote>
+    <h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="查看题目请-CTRL-F-再输入题目名字即可"><a href="#查看题目请-CTRL-F-再输入题目名字即可" class="headerlink" title="##查看题目请 CTRL+F 再输入题目名字即可"></a>##查看题目请 CTRL+F 再输入题目名字即可</h2><blockquote>
 <p><strong>[BJDCTF 2nd]fake google</strong></p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过测试，存在xss和模板注入，这题是模板注入<br><a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">参考文献</a><br>##
@@ -324,6 +323,17 @@
     </div>
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">writeup</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -485,6 +495,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">writeup</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
