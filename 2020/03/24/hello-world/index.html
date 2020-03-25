@@ -472,10 +472,10 @@
   var titleTime;
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "(つェ⊂) 快点进来看 " + originTitle;
+      document.title = "(つェ⊂) 快回来！ " + originTitle;
       clearTimeout(titleTime);
     } else {
-      document.title = "(*´∇｀*) 文章好看不 " + originTitle;
+      document.title = "(*´∇｀*) 你来啦！ " + originTitle;
       titleTime = setTimeout(function () {
         document.title = originTitle;
       }, 2000);
